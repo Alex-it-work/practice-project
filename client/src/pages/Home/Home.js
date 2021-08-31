@@ -232,6 +232,48 @@ const Home = props => {
                 />
               </div>
             </div>
+            {/* /////////////////////////////////////////////////////// */}
+            <div className={styles.container__experience}>
+              <h2>Agency Level Experience</h2>
+              <div className={styles.cardContainer}>
+                <div className={styles.card}>
+                  <img
+                    src={`${CONSTANTS.STATIC_IMAGES_PATH}more-benifits-world-icon.png`}
+                    alt='globe'
+                  />
+                  <h3>Managed Contests</h3>
+                  <p>
+                    Combine the power of crowdsourcing with the rich experience
+                    of our branding consultants. Get a complete agency-level
+                    experience. Learn More.
+                  </p>
+                </div>
+                <div className={styles.card}>
+                  <img
+                    src={`${CONSTANTS.STATIC_IMAGES_PATH}more-benifits-high-quality-icon.png`}
+                    alt='desktop'
+                  />
+                  <h3>Audience Testing</h3>
+                  <p>
+                    Get unbiased feedback from real people to choose your most
+                    important brand elements with confidence! Learn More.
+                  </p>
+                </div>
+                <div className={styles.card}>
+                  <img
+                    src={`${CONSTANTS.STATIC_IMAGES_PATH}more-benifits-trademark-icon.png`}
+                    alt='cards'
+                  />
+                  <h3>Trademark Support</h3>
+                  <p>
+                    Work with our team of experienced licensed trademark
+                    attorneys to protect your name, tagline, and logo with the
+                    USPTO. Learn More.
+                  </p>
+                </div>
+              </div>
+            </div>
+            {/* /////////////////////////////////////////////////////// */}
             <div className={styles.headerBar}>
               <h3>Names For Sale</h3>
               <p className={styles.blueUnderline}>

@@ -32,6 +32,42 @@
     margin: 90px 0 30px 0
     padding: 0 80px
 
+@mixin aside
+  display: flex
+  flex-direction: column
+  justify-content: flex-start
+  align-items: center
+    
+@mixin cardContainer
+  display: flex
+  flex-direction: row
+  justify-content: flex-start
+  align-items: flex-start
+  @media (max-width: 720px)
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: center
+
+@mixin card
+  display: flex
+  flex-direction: column
+  justify-content: flex-start
+  align-items: flex-start
+  max-width: 300px
+  margin: 40px 40px 40px 0
+  font-family: Raleway, sans-serif
+
+@mixin h3
+  margin-top: 20px
+  font-size: 22px
+  font-weight: 500
+
+@mixin p
+  margin-top: 10px
+  font-size: 14px
+  line-height: 20px
+  font-weight: 400    
 
 .container
   display: flex
@@ -48,43 +84,19 @@
     font-weight: 500
 
   &__description
-    display: flex
-    flex-direction: column
-    justify-content: flex-start
-    align-items: center
-
-
+    @include aside
+    
     .cardContainer
-      display: flex
-      flex-direction: row
-      justify-content: flex-start
-      align-items: flex-start
-      @media (max-width: 720px)
-        display: flex
-        flex-direction: column
-        justify-content: flex-start
-        align-items: center
-
+      @include cardContainer
 
     .card
-      display: flex
-      flex-direction: column
-      justify-content: flex-start
-      align-items: flex-start
-      max-width: 300px
-      margin: 40px 40px 40px 0
-      font-family: Raleway, sans-serif
+      @include card
 
       h3
-        margin-top: 20px
-        font-size: 22px
-        font-weight: 500
+        @include h3
 
       p
-        margin-top: 10px
-        font-size: 14px
-        line-height: 20px
-        font-weight: 400
+        @include p
 
       img
         max-height: 85px
@@ -100,6 +112,36 @@
         p
           margin-right: 10px
 
+  &__experience
+    @include aside
+
+
+    .cardContainer
+      @include cardContainer
+
+
+    .card
+      @include card
+
+      h3
+        @include h3
+
+      p
+        @include p
+
+      img
+        max-height: 85px
+
+      &:last-child
+        margin-right: 0
+
+      @media screen and (max-width: 768px)
+        max-width: 100%
+        margin: 40px
+
+      @media screen and (max-width: 414px)
+        p
+          margin-right: 10px
 
   .adv
     display: flex
