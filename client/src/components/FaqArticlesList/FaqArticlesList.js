@@ -1,12 +1,9 @@
 import React from 'react';
+import CONSTANTS from '../../constants';
 import styles from './FaqArticlesList.module.sass';
 import faqs from './faqs.json';
 
 function FaqArticlesList () {
-  const mapColumns = column => (
-    <div className={styles.ColumnContainer}> {column.map(mapArticles)} </div>
-  );
-
   const mapArticles = ({ header, body }) => (
     <>
       <div className={styles.headerArticle}>{header}</div>
@@ -16,15 +13,25 @@ function FaqArticlesList () {
 
   return (
     <div className={styles.articlesMainContainer}>
-      {faqs.map(mapColumns)}
-      <div className={styles.headerArticle}>
-        I have other questions! How can I get in touch with Squadhelp?
-      </div>
-      <div className={styles.article}>
-        Check out our <span className={styles.orangeSpan}>FAQs</span> or send us
-        a<span className={styles.orangeSpan}>message</span>. For assistance with
-        launching a contest, you can also call us at (877) 355-3585 or schedule
-        a<span className={styles.orangeSpan}>Branding Consultation</span>
+      <div className={styles.ColumnContainer}>{faqs[0].map(mapArticles)}</div>
+      <div className={styles.ColumnContainer}>
+        {faqs[1].map(mapArticles)}
+        <div className={styles.headerArticle}>
+          I have other questions! How can I get in touch with Squadhelp?
+        </div>
+        <div className={styles.article}>
+          Check out our <span className={styles.orangeSpan}>FAQs</span> or send
+          us a <span className={styles.orangeSpan}>message</span>. For
+          assistance with launching a contest, you can also call us at{' '}
+          <a
+            style={{ textDecoration: 'none' }}
+            href={`tel:${CONSTANTS.CONTACTS.TEL}`}
+          >
+            <span>{CONSTANTS.CONTACTS.TEL}</span>
+          </a>{' '}
+          or schedule a{' '}
+          <span className={styles.orangeSpan}>Branding Consultation</span>
+        </div>
       </div>
     </div>
   );
