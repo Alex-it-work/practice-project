@@ -1,21 +1,34 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
+import TransactionList from './TransactionList/TransactionList';
+import styles from '../TransactionsPage/TransactionList/TransactionsList.module.sass';
+import { getTransactionsAction } from '../../actions/actionCreator';
 
-const transactions = [
-  { id: 1, date: '2021-08-31', operationType: 'INCOME', amount: 10 },
-  { id: 2, date: '2021-09-01', operationType: 'INCOME', amount: 20 },
-  { id: 3, date: '2021-09-04', operationType: 'INCOME', amount: 40 },
-];
+function TransactionPage (props) {
+  const { isFetching, error, transactions, getTransactions } = props;
 
-function TransactionPage () {
+  useEffect(() => {
+    getTransactions();
+  }, []);
+
   return (
     <>
       <Header />
-      <div>Info</div>
+      <section className={styles.transactionsListContainer}>
+        <TransactionList transactions={transactions} />
+      </section>
+
       <Footer />
     </>
   );
 }
 
-export default TransactionPage;
+const mapStateToProps = state => state.transaction;
+
+const mapDicpatchToProps = dispatch => ({
+  getTransactions: () => dispatch(getTransactionsAction()),
+});
+
+export default connect(mapStateToProps, mapDicpatchToProps)(TransactionPage);
