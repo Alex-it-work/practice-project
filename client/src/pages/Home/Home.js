@@ -237,10 +237,8 @@ const Home = props => {
               <h2>Agency Level Experience</h2>
               <div className={styles.cardContainer}>
                 <div className={styles.card}>
-                  <img
-                    src={`${CONSTANTS.STATIC_IMAGES_PATH}more-benifits-world-icon.png`}
-                    alt='globe'
-                  />
+                  <div className={styles.roundedCircle}></div>
+                  <span class='fab fa-whmcs fa-2x'></span>
                   <h3>Managed Contests</h3>
                   <p>
                     Combine the power of crowdsourcing with the rich experience
