@@ -16,11 +16,11 @@ function transactionReducer (state = initialState, action) {
       const { transactions } = action;
       return { ...state, isFatching: false, transactions };
     }
-    case ACTION.GET_TRANSACTIONS_ERROR:
-      {
-        const { error } = action;
-        return { ...state, isFatching: false, error };
-      }
+    case ACTION.GET_TRANSACTIONS_ERROR: {
+      const { error } = action;
+      return { ...state, isFatching: false, error };
+    }
+    default:
       return state;
   }
 }
