@@ -294,22 +294,22 @@ export const changeModalShow = (data) => ({
 });
 
 //TRANSACTIONS
-export const getUserAction = (data) => ({
-  type: ACTION.GET_USER_ACTION,
-  replace: data,
-});
+// export const getUserAction = (data) => ({
+//   type: ACTION.GET_USER_ACTION,
+//   replace: data,
+// });
 
-export const getUserAction = (data) => ({
-  type: ACTION.GET_USER_ACTION,
-  replace: data,
-});
+// export const getUserAction = (data) => ({
+//   type: ACTION.GET_USER_ACTION,
+//   replace: data,
+// });
 
-export const getUserAction = (data) => ({
-  type: ACTION.GET_USER_ACTION,
-  replace: data,
-});
+// export const getUserAction = (data) => ({
+//   type: ACTION.GET_USER_ACTION,
+//   replace: data,
+// });
 
-export const getUserAction = (data) => ({
-  type: ACTION.GET_USER_ACTION,
-  replace: data,
-});
+// export const getUserAction = (data) => ({
+//   type: ACTION.GET_USER_ACTION,
+//   replace: data,
+// });
