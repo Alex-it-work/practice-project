@@ -311,3 +311,4 @@ export const getTransactionsError = e => ({
   type: ACTION.GET_TRANSACTIONS_ERROR,
   error: e,
 });
+//comment
