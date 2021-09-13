@@ -292,3 +292,24 @@ export const changeModalShow = (data) => ({
   type: ACTION.CHANGE_SHOW_MODAL,
   data,
 });
+
+//TRANSACTIONS
+export const getUserAction = (data) => ({
+  type: ACTION.GET_USER_ACTION,
+  replace: data,
+});
+
+export const getUserAction = (data) => ({
+  type: ACTION.GET_USER_ACTION,
+  replace: data,
+});
+
+export const getUserAction = (data) => ({
+  type: ACTION.GET_USER_ACTION,
+  replace: data,
+});
+
+export const getUserAction = (data) => ({
+  type: ACTION.GET_USER_ACTION,
+  replace: data,
+});
