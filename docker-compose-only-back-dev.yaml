@@ -1,6 +1,5 @@
 version: '3'
 services:
-
   server-dev:
     build:
       context: ./server
@@ -8,7 +7,7 @@ services:
     environment:
       NODE_ENV: development
     ports:
-      - "5000:5000"
+      - '5000:5000'
     depends_on:
       - db-dev
       - mongo-dev
