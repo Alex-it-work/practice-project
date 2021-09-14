@@ -20,6 +20,8 @@ const transactionReducer = (state = initialState, action) => {
       const { error } = action;
       return { ...state, isFetching: false, error };
     }
+    default:
+      return state;
   }
 };
 
