@@ -61,3 +61,16 @@ export const getContestById = data =>
       contestId: data.contestId,
     },
   });
+
+const transactions = [
+  { id: 1, date: '2021-08-31', operationType: 'INCOME', amount: 50 },
+  { id: 2, date: '2021-09-01', operationType: 'EXPENSE', amount: 20 },
+  { id: 3, date: '2021-09-04', operationType: 'INCOME', amount: 40 },
+  { id: 4, date: '2021-09-10', operationType: 'EXPENSE', amount: 10 },
+  { id: 5, date: '2021-09-11', operationType: 'INCOME', amount: 20 },
+  { id: 6, date: '2021-09-13', operationType: 'EXPENSE', amount: 40 },
+];
+
+export const getTransactions = () => ({
+  data: transactions,
+});
