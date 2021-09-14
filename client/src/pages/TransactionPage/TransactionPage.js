@@ -8,7 +8,6 @@ function TransactionPage () {
     <>
       <Header />
       <Transactions />
-
       <Footer />
     </>
   );
