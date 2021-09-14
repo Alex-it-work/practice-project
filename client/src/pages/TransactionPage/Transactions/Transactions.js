@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { getTransactionsAction } from '../../../actions/actionCreator';
 import Error from '../../../components/Error/Error';
 import CONSTANTS from '../../../constants';
+import styles from './Transactions.module.sass';
 
 function Transactions (props) {
   const { firstName, lastName, avatar, transaction, getTransactions } = props;
@@ -24,34 +25,32 @@ function Transactions (props) {
   return (
     <>
       {isFetching && <div>Loading....</div>}
-      {error && (
-        <div>
-          <Error />
-        </div>
-      )}
-      <table>
-        <caption>
-          <img
-            src={
-              avatar === 'anon.png'
-                ? CONSTANTS.ANONYM_IMAGE_PATH
-                : `${CONSTANTS.publicURL}${avatar}`
-            }
-            // className={styles.avatar}
-            alt='user'
-          />
-          {lastName} {firstName}, transactions report!
-        </caption>
-        <thead>
-          <tr>
-            <th>№</th>
-            <th>Date</th>
-            <th>Operation</th>
-            <th>Amount</th>
-          </tr>
-        </thead>
-        <tbody>{transactions.map(mapTransactions)}</tbody>
-      </table>
+      {error && <Error />}
+      <div className={styles.transactionsContainer}>
+        <table>
+          <caption>
+            <img
+              src={
+                avatar === 'anon.png'
+                  ? CONSTANTS.ANONYM_IMAGE_PATH
+                  : `${CONSTANTS.publicURL}${avatar}`
+              }
+              className={styles.avatar}
+              alt='user'
+            />
+            {lastName} {firstName}, transactions report!
+          </caption>
+          <thead>
+            <tr>
+              <th>№</th>
+              <th>Date</th>
+              <th>Operation</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+          <tbody>{transactions.map(mapTransactions)}</tbody>
+        </table>
+      </div>
     </>
   );
 }
